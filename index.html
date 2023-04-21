@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalizer.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="css/uicons-brands.css" rel="stylesheet">
     <title>Deviner le nombre</title>
 </head>
 <body>
-    <p class="guesses"></p>
-    <p class="lastResult"></p>
-    <p class="lowOrHi"></p>
-    <label for="guessField">Entrez un nombre entre 1 et 100: </label><input type="text" id="guessField" class="guessField">
-    <input type="submit" value="Submit guess" class="guessSubmit">
+    <header>
+
+    </header>
+    <main>
+        <div id="container">
+            <img src="./images/wizard.png" alt="Une sorcière d'un univers fantasy" class="wizard">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+            <div id="container-form">
+                <label for="guessField">Entrez un nombre entre 1 et 100: </label><input type="text" id="guessField" class="guessField">
+                <input type="submit" value="Submit guess" class="guessSubmit">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <span class=".credit">Crédit :</span>
+        <a href="https://www.flaticon.com/fr/icones-gratuites/sorciere" title="sorcière icônes">Sorcière icônes créées par Freepik - Flaticon</a>
+    </footer>
     <script src="js/main.js"></script>
 </body>
 </html>
