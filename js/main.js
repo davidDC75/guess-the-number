@@ -1,17 +1,30 @@
+const dev = true; // mode dev
+
+// Le numéro a deviner
 let randomNumber = Math.floor(Math.random()*100)+1;
 
-let guesses = document.querySelector('.guesses');
-let lastResult = document.querySelector('.lastResult');
-let lowOrHi = document.querySelector('.lowOrHi');
+// Propositions précédentes
+const guesses = document.querySelector('.guesses');
 
-let guessSubmit = document.querySelector('.guessSubmit');
-let guessField = document.querySelector('.guessField');
+
+const lowOrHi = document.querySelector('p.lowOrHi');
+
+const guessSubmit = document.querySelector('.guessSubmit');
+const guessField = document.querySelector('.guessField');
+
 
 let lastResultState = false;
+// texte Bravo ou faux
+const lastResult = document.querySelector('.lastResult');
+const lastResultContainer = document.getElementById('lastResultContainer');
 const resultDisplayIcon = document.querySelector('span.result');
 const resultDisplayText = document.querySelector('p.result');
 
-console.log('Résultat: '+randomNumber);
+const inputPatternValidation = /^[^0]?(100|[1-9]|[1-9][\d])$/;
+
+if (dev) {
+    console.log('Résultat: '+randomNumber);
+}
 
 let guessCount = 1;
 let resetButton = document.querySelector('button.resetButton');
@@ -26,32 +39,50 @@ function css(element, style) {
 
 function setLastResultState(state) {
     resultDisplayIcon.textContent = state?'check':'close';
-    css(resultDisplayIcon,{
+
+    css(lastResultContainer,{
         'background-color': state?'green':'red',
-        'display': state?'block':'block',
+        'visibility': 'visible',
     });
-    css(resultDisplayText,{
-        'background-color': state?'green':'red',
-        'display': state?'block':'block',
+    css(lowOrHi,{
+        'visibility': state?'hidden':'visible',
     });
     return;
 }
 
 function resetResultStat() {
-    css(resultDisplayIcon,{
-        'display': 'none'
+    css(lastResultContainer,{
+        'visibility': 'hidden',
     });
-    css(resultDisplayText,{
-        'display': 'none',
+    css(lowOrHi,{
+        'visibility': 'hidden',
+    });
+    css(guesses,{
+        'visibility': 'hidden',
     });
 }
 
 function checkGuess() {
     let userGuess = Number(guessField.value);
+
+    if (guessField.value.match(inputPatternValidation) === null) {
+        guessField.value='';
+        guessField.focus();
+        lastResult.textContent = 'Nombre invalide';
+        lastResult.style.backgroundColor = 'red';
+        setLastResultState(false);
+        css(lowOrHi,{
+            'visibility': 'hidden',
+        });
+        return;
+    }
     if (guessCount === 1) {
         guesses.textContent = 'Proposition précédente : ';
         css(guesses,{
-            'display': 'block',
+            'visibility': 'visible',
+        });
+        css(lowOrHi,{
+            'visibility': 'visible',
         });
     }
     guesses.textContent += userGuess + ' ';
@@ -86,12 +117,8 @@ function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
     css(resetButton,{
-        'display': 'block',
+        'visibility': 'visible',
     });
-    // resetButton = document.createElement('button');
-    // resetButton.textContent = 'Commencer une nouvelle partie';
-    // document.body.appendChild(resetButton);
-    // resetButton.addEventListener('click', resetGame);
 }
 
 function resetGame() {
@@ -99,11 +126,15 @@ function resetGame() {
     resetResultStat();
 
     css(resetButton,{
-        'display': 'none',
+        'visibility': 'hidden',
     });
 
     css(guesses,{
-        'display': 'none',
+        'visibility': 'hidden',
+    });
+
+    css(lowOrHi,{
+        'visibility': 'hidden',
     });
 
     guesses.textContent = '';
@@ -123,6 +154,11 @@ function resetGame() {
     lastResult.style.backgroundColor = 'white';
 
     randomNumber = Math.floor(Math.random()*100)+1;
+
+    if (dev) {
+        console.log('Résultat: '+randomNumber);
+    }
+
 }
 
 guessSubmit.addEventListener('click', checkGuess);

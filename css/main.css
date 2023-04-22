@@ -25,7 +25,7 @@ main #mainContainer {
 main #mainContainer .guesses {
     margin: 10px;
     padding: 5px;
-    display: none;
+    visibility: hidden;
 }
 
 /* main #mainContainer .guesses .material-symbols-outlined {
@@ -51,6 +51,8 @@ main #mainContainer #lastResultContainer {
 main #mainContainer #lastResultContainer {
     margin: 0;
     padding: 0;
+    background-color: red;
+    visibility: hidden;
 }
 
 main #mainContainer #lastResultContainer .lastResult {
@@ -64,15 +66,22 @@ main #mainContainer #lastResultContainer .lastResult {
 p.result, span.result {
     margin: 0;
     padding: 0;
-    background-color: red;
-    display: none;
+    /* background-color: red; */
+    /* visibility: hidden; */
+}
+
+span.result {
+    font-size: 4em;
 }
 
 main #mainContainer #resetGameContainer button.resetButton {
-    display: none;
+    margin: 10px;
+    padding: 5px;
+    visibility: hidden;
 }
 
-main #mainContainer .lowOrHi {
+main #mainContainer p.lowOrHi {
+    visibility: hidden;
     margin: 10px;
     padding: 5px;
 }

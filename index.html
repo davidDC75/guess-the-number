@@ -17,14 +17,14 @@
     <main>
         <div id="mainContainer">
             <img src="./images/wizard.png" alt="Une sorcière d'un univers fantasy" class="wizard">
-            <p class="guesses"></p>
+            <p class="guesses">init</p>
             <div id="lastResultContainer">
-                <span class="result material-symbols-outlined" style="display:none;">check</span>
-                <p class="lastResult result"></p>
+                <span class="result material-symbols-outlined">check</span>
+                <p class="lastResult result">init</p>
             </div>
-            <p class="lowOrHi"></p>
+            <p class="lowOrHi">init</p>
             <div id="container-form">
-                <label for="guessField">Entrez un nombre entre 1 et 100: </label><input type="text" id="guessField" class="guessField">
+                <label for="guessField">Entrez un nombre entre 1 et 100: </label><input type="text" pattern="^[^0]?(100|[1-9]|[1-9][\d])$" id="guessField" class="guessField">
                 <button class="guessSubmit">Valider</button>
             </div>
             <div id="resetGameContainer">
@@ -35,6 +35,7 @@
     <footer>
         <span class=".credit">Crédit :</span>
         <a href="https://www.flaticon.com/fr/icones-gratuites/sorciere" title="sorcière icônes">Sorcière icônes créées par Freepik - Flaticon</a>
+        &nbsp;<span class="material-icons-outlined">subdirectory_arrow_left</span>
     </footer>
     <script src="js/main.js"></script>
 </body>
