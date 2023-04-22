@@ -24,7 +24,7 @@ h1 {
     font-size: 3em;
     background-color: #000;
     color: #FFF;
-    margin: 0;
+    margin: 0px 0px 10px 0px;
     padding: 0;
 }
 
@@ -35,9 +35,18 @@ nav {
     align-items: center;
 }
 
-a.navBorder {
+nav a {
+    font-family: "Press start 2P";
     font-size: 1.3em;
     text-decoration: none;
+    padding: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border: 2px solid black;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
 }
 
 
@@ -58,7 +67,7 @@ a.navBorder {
     position: relative;
     width: 800px;
     height: 300px;
-    margin: 10px;
+    margin: 10px 10px 40px 10px;
     box-shadow:
     2.9px 2.4px 2.5px -10px rgba(0, 0, 0, 0.217),
     9.6px 8px 4.7px -10px rgba(0, 0, 0, 0.251),
@@ -140,7 +149,8 @@ p.result {
 /* DEBUT BORDURE FORM */
 #formContainer {
     height: 50px;
-    width: 600px;
+    width: 60%;
+    padding: 5px 10px 5px 10px;
     position: relative;
     display:flex;
     align-items: center;
@@ -233,6 +243,7 @@ footer #credit {
 
 /* Début du bouton Valider */
 button.guessSubmit {
+    visibility: visible;
     position: relative;
     background: #444;
     color: #fff;

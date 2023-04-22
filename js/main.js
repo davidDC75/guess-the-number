@@ -133,6 +133,9 @@ function checkGuess() {
 function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
+    css(guessSubmit,{
+        'visibility': 'hidden',
+    });
     css(resetButton,{
         'visibility': 'visible',
     });
@@ -142,6 +145,10 @@ function resetGame() {
     guessCount = 1;
     guessCountDiv.textContent = 'Essai '+guessCount;
     resetResultStat();
+
+    css(guessSubmit,{
+        'visibility': 'visible',
+    });
 
     css(resetButton,{
         'visibility': 'hidden',
