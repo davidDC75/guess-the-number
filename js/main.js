@@ -97,19 +97,21 @@ function checkGuess() {
             'visibility': 'visible',
         });
     }
-    guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
+        guesses.textContent += userGuess;
         lastResult.textContent = 'Bravo, vous avez trouvé le nombre !';
         lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
         setLastResultState(true);
         setGameOver();
     } else if (guessCount === 10) {
+        guesses.textContent += userGuess;
         lastResult.textContent = '!!! PERDU !!!';
         setLastResultState(false);
         setGameOver();
     } else {
+        guesses.textContent += userGuess + ', ';
         lastResult.textContent = 'Faux ! ';
         lastResult.style.backgroundColor = 'red';
         setLastResultState(false);
