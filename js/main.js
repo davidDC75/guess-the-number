@@ -14,7 +14,9 @@ const resultDisplayText = document.querySelector('p.result');
 console.log('Résultat: '+randomNumber);
 
 let guessCount = 1;
-let resetButton;
+let resetButton = document.querySelector('button.resetButton');
+
+resetButton.addEventListener('click', resetGame);
 
 function css(element, style) {
     for (const property in style)
@@ -23,7 +25,6 @@ function css(element, style) {
 }
 
 function setLastResultState(state) {
-    console.log('Dans SetLastResultState : '+(state?'check':'close'));
     resultDisplayIcon.textContent = state?'check':'close';
     css(resultDisplayIcon,{
         'background-color': state?'green':'red',
@@ -34,6 +35,15 @@ function setLastResultState(state) {
         'display': state?'block':'block',
     });
     return;
+}
+
+function resetResultStat() {
+    css(resultDisplayIcon,{
+        'display': 'none'
+    });
+    css(resultDisplayText,{
+        'display': 'none',
+    });
 }
 
 function checkGuess() {
@@ -72,21 +82,31 @@ function checkGuess() {
 function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
-    resetButton = document.createElement('button');
-    resetButton.textContent = 'Commencer une nouvelle partie';
-    document.body.appendChild(resetButton);
-    resetButton.addEventListener('click', resetGame);
+    css(resetButton,{
+        'display': 'block',
+    });
+    // resetButton = document.createElement('button');
+    // resetButton.textContent = 'Commencer une nouvelle partie';
+    // document.body.appendChild(resetButton);
+    // resetButton.addEventListener('click', resetGame);
 }
 
 function resetGame() {
     guessCount = 1;
-    setLastResultState(true);
+    resetResultStat();
+
+    css(resetButton,{
+        'display': 'none',
+    });
+
+    guesses.textContent = '';
+
     let resetParas = document.querySelectorAll('.resultParas p');
     for (let i = 0 ; i < resetParas.length ; i++) {
         resetParas[i].textContent = '';
     }
 
-    resetButton.parentNode.removeChild(resetButton);
+    // resetButton.parentNode.removeChild(resetButton);
 
     guessField.disabled = false;
     guessSubmit.disabled = false;

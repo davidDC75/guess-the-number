@@ -67,6 +67,10 @@ p.result, span.result {
     display: none;
 }
 
+main #mainContainer #resetGameContainer button.resetButton {
+    display: none;
+}
+
 main #mainContainer .lowOrHi {
     margin: 10px;
     padding: 5px;
