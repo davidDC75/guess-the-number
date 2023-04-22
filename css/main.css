@@ -47,14 +47,12 @@ main #mainContainer #lastResultContainer {
 
 }
 
-main #mainContainer #lastResultContainer .display-icon-close {
-    background-color: red;
+main #mainContainer #lastResultContainer {
     margin: 0;
     padding: 0;
 }
 
 main #mainContainer #lastResultContainer .lastResult {
-    background-color: red;
     margin: 10px;
     padding: 5px;
     height: 30px;
@@ -62,7 +60,10 @@ main #mainContainer #lastResultContainer .lastResult {
     font-weight: bold;
 }
 
-.false {
+p.result, span.result {
+    margin: 0;
+    padding: 0;
+    background-color: red;
     display: none;
 }
 

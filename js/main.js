@@ -8,8 +8,10 @@ let guessSubmit = document.querySelector('.guessSubmit');
 let guessField = document.querySelector('.guessField');
 
 let lastResultState = false;
-const resultDisplay = document.querySelector('.false');
-console.log(resultDisplay);
+const resultDisplayIcon = document.querySelector('span.result');
+const resultDisplayText = document.querySelector('p.result');
+
+console.log('Résultat: '+randomNumber);
 
 let guessCount = 1;
 let resetButton;
@@ -20,9 +22,16 @@ function css(element, style) {
     return;
 }
 
-function SetLastResultState(state) {
-    css(resultDisplay,{
-        'display': state?'none':'block',
+function setLastResultState(state) {
+    console.log('Dans SetLastResultState : '+(state?'check':'close'));
+    resultDisplayIcon.textContent = state?'check':'close';
+    css(resultDisplayIcon,{
+        'background-color': state?'green':'red',
+        'display': state?'block':'block',
+    });
+    css(resultDisplayText,{
+        'background-color': state?'green':'red',
+        'display': state?'block':'block',
     });
     return;
 }
@@ -38,6 +47,7 @@ function checkGuess() {
         lastResult.textContent = 'Bravo, vous avez trouvé le nombre !';
         lastResult.style.backgroundColor = 'green';
         lowOrHi.textContent = '';
+        setLastResultState(true);
         setGameOver();
     } else if (guessCount === 10) {
         lastResult.textContent = '!!! PERDU !!!';
@@ -46,7 +56,7 @@ function checkGuess() {
     } else {
         lastResult.textContent = 'Faux !';
         lastResult.style.backgroundColor = 'red';
-        SetLastResultState(false)
+        setLastResultState(false);
         if (userGuess < randomNumber) {
             lowOrHi.textContent = 'Le nombre saisi est trop petit !';
         } else if (userGuess > randomNumber) {
@@ -70,7 +80,7 @@ function setGameOver() {
 
 function resetGame() {
     guessCount = 1;
-    SetLastResultState(true);
+    setLastResultState(true);
     let resetParas = document.querySelectorAll('.resultParas p');
     for (let i = 0 ; i < resetParas.length ; i++) {
         resetParas[i].textContent = '';
