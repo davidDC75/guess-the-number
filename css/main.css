@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,700&display=swap');
 
+/* font médiévale */
+@font-face {
+    font-family: 'Medieval';
+    src: url('../font/MedievalSharp-Regular.ttf') format('truetype');
+}
+
 body, header, main, aside, footer {
     margin: 0;
     padding: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Medieval', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     color: black;
@@ -32,7 +38,7 @@ main #mainContainer #background {
 main div#mainContainer div#background div.wizardBackground {
     width: 100%;
     height:100%;
-    top:0;
+    top: 0;
     left:0;
     opacity: 1;
     background-image: url(../images/fond_fantasy.jpg);
@@ -45,9 +51,10 @@ main div#mainContainer div#background div.wizardBackground {
 main div#mainContainer div#background div.wizard {
     z-index: 1;
     opacity: 1;
-    /* width: 800px;
-    height:300px; */
-    margin: 30px;
+    width: 300px;
+    height:300px;
+    top: 40px;
+    left: 230px;
     background-image: url(../images/wizard.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -94,6 +101,7 @@ main #mainContainer #lastResultContainer .lastResult {
     height: 30px;
     font-size: 2em;
     font-weight: bold;
+
 }
 
 p.result, span.result {
@@ -102,6 +110,10 @@ p.result, span.result {
     /* background-color: red; */
     /* visibility: hidden; */
 }
+
+/* p.result {
+    font-family: 'Medieval', sans-serif;
+} */
 
 span.result {
     font-size: 4em;
