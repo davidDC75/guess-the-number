@@ -50,6 +50,9 @@ function checkGuess() {
     let userGuess = Number(guessField.value);
     if (guessCount === 1) {
         guesses.textContent = 'Proposition précédente : ';
+        css(guesses,{
+            'display': 'block',
+        });
     }
     guesses.textContent += userGuess + ' ';
 
@@ -96,6 +99,10 @@ function resetGame() {
     resetResultStat();
 
     css(resetButton,{
+        'display': 'none',
+    });
+
+    css(guesses,{
         'display': 'none',
     });
 
