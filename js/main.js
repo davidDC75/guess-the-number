@@ -25,6 +25,8 @@ const lastResultContainer = document.getElementById('lastResultContainer');
 // L'icone check ou close
 const resultDisplayIcon = document.querySelector('span.result');
 
+const guessCountDiv = document.querySelector('.guessCount');
+
 // La regex de validation
 const inputPatternValidation = /^(0*100|0*[1-9]|0*[1-9][\d])$/;
 
@@ -123,6 +125,7 @@ function checkGuess() {
     }
 
     guessCount++;
+    guessCountDiv.textContent = 'Essai '+guessCount;
     guessField.value = '';
     guessField.focus();
 }
@@ -137,6 +140,7 @@ function setGameOver() {
 
 function resetGame() {
     guessCount = 1;
+    guessCountDiv.textContent = 'Essai '+guessCount;
     resetResultStat();
 
     css(resetButton,{
