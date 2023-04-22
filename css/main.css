@@ -4,6 +4,9 @@
     src: url('../font/MedievalSharp-Regular.ttf') format('truetype');
 }
 
+/* font 8-bit */
+/* @import url(https://fonts.googleapis.com/css?family=Press+Start+2P); */
+
 body, header, main, aside, footer {
     margin: 0;
     padding: 0;
@@ -107,12 +110,9 @@ div.wizard {
     align-items: center;
     align-content: center;
     visibility: hidden;
-    border: 2px solid #000;
-    border-top-left-radius: 37px 140px;
-    border-top-right-radius: 23px 130px;
-    border-bottom-left-radius: 110px 19px;
-    border-bottom-right-radius: 120px 24px;
 
+    box-shadow: 16px 0 white, -16px 0 white, 0 -16px white, 0 16px white, 4px 0 0 8px white, -4px 0 0 8px white, 0 -4px 0 8px white, 0 4px 0 8px white, 20px 0 orange, -20px 0 orange, 0 -20px orange, 0 20px orange, 0 0 0 12px orange, 0 8px 0 8px orange, 0 -8px 0 8px orange, 8px 0 0 8px orange, -8px 0 0 8px orange;
+    margin: 20px auto;
 }
 
 .lastResult {
@@ -126,8 +126,6 @@ div.wizard {
 p.result, span.result {
     margin: 10px;
     padding: 5px;
-    /* background-color: red; */
-    /* visibility: hidden; */
 }
 
 span.result {
@@ -135,8 +133,8 @@ span.result {
 }
 
 p.result {
-    font-size: 2em;
-    font-weight: bold;
+    font-family: "Press start 2P";
+    font-size: 1.6em;
 }
 
 /* DEBUT BORDURE FORM */
