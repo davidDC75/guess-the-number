@@ -22,6 +22,39 @@ main #mainContainer {
     border: 1px solid black;
 }
 
+main #mainContainer #background {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    margin: 10px;
+}
+
+main div#mainContainer div#background div.wizardBackground {
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity: 1;
+    background-image: url(../images/fond_fantasy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 0px;
+    position: absolute;
+}
+
+main div#mainContainer div#background div.wizard {
+    z-index: 1;
+    opacity: 1;
+    /* width: 800px;
+    height:300px; */
+    margin: 30px;
+    background-image: url(../images/wizard.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 0px;
+    position: relative;
+}
+
 main #mainContainer .guesses {
     margin: 10px;
     padding: 5px;
@@ -86,9 +119,10 @@ main #mainContainer p.lowOrHi {
     padding: 5px;
 }
 
-main #mainContainer .wizard {
+/* main #mainContainer .wizard {
+    background-image: url('');
     height: 300px;
-}
+} */
 
 .material-symbols-outlined {
   font-variation-settings:

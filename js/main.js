@@ -20,7 +20,7 @@ const lastResultContainer = document.getElementById('lastResultContainer');
 const resultDisplayIcon = document.querySelector('span.result');
 const resultDisplayText = document.querySelector('p.result');
 
-const inputPatternValidation = /^[^0]?(100|[1-9]|[1-9][\d])$/;
+const inputPatternValidation = /^(100|0*[1-9]|0*[1-9][\d])$/;
 
 if (dev) {
     console.log('Résultat: '+randomNumber);
