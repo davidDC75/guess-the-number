@@ -7,27 +7,39 @@ let randomNumber = Math.floor(Math.random()*100)+1;
 const guesses = document.querySelector('.guesses');
 
 
+// Texte indiquant si on est trop petit ou trop grand
 const lowOrHi = document.querySelector('p.lowOrHi');
 
+// Le bouton valider
 const guessSubmit = document.querySelector('.guessSubmit');
+
+// Le champs
 const guessField = document.querySelector('.guessField');
 
-
-let lastResultState = false;
 // texte Bravo ou faux
 const lastResult = document.querySelector('.lastResult');
-const lastResultContainer = document.getElementById('lastResultContainer');
-const resultDisplayIcon = document.querySelector('span.result');
-const resultDisplayText = document.querySelector('p.result');
 
+// Le div du panneau vrai ou faux
+const lastResultContainer = document.getElementById('lastResultContainer');
+
+// L'icone check ou close
+const resultDisplayIcon = document.querySelector('span.result');
+
+// La regex de validation
 const inputPatternValidation = /^(0*100|0*[1-9]|0*[1-9][\d])$/;
 
+// Le bouton commencer une nouvelle partie
+const resetButton = document.querySelector('button.resetButton');
+
+// Si mode développement affiche la solution
 if (dev) {
     console.log('Résultat: '+randomNumber);
 }
 
+// Mise à 1 du compteur du tour
 let guessCount = 1;
-let resetButton = document.querySelector('button.resetButton');
+
+
 
 resetButton.addEventListener('click', resetGame);
 
@@ -150,8 +162,6 @@ function resetGame() {
     guessSubmit.disabled = false;
     guessField.value = '';
     guessField.focus();
-
-    lastResult.style.backgroundColor = 'white';
 
     randomNumber = Math.floor(Math.random()*100)+1;
 
