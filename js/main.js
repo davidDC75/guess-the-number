@@ -110,7 +110,7 @@ function checkGuess() {
         setLastResultState(false);
         setGameOver();
     } else {
-        lastResult.textContent = 'Faux !';
+        lastResult.textContent = 'Faux ! ';
         lastResult.style.backgroundColor = 'red';
         setLastResultState(false);
         if (userGuess < randomNumber) {
