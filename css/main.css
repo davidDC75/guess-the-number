@@ -17,6 +17,14 @@ h1, h2 {
     text-align: center;
 }
 
+h1 {
+    font-size: 3em;
+    background-color: #000;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
 header nav a {
     display: block;
     text-align: center;
@@ -80,6 +88,7 @@ div.wizard {
 }
 
 #lastResultContainer {
+    background-color: red;
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -88,14 +97,8 @@ div.wizard {
     flex-wrap: nowrap;
     align-items: center;
     align-content: center;
-
-}
-
-#lastResultContainer {
-    margin: 0;
-    padding: 0;
-    background-color: red;
     visibility: hidden;
+
 }
 
 .lastResult {
@@ -108,8 +111,8 @@ div.wizard {
 }
 
 p.result, span.result {
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 5px;
     /* background-color: red; */
     /* visibility: hidden; */
 }
@@ -118,6 +121,68 @@ span.result {
     font-size: 4em;
 }
 
+p.result {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#formContainer {
+    height: 50px;
+    width: 600px;
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box__line {
+    position: absolute;
+    background: black;
+  }
+  .box__line--top, .box__line--bottom {
+    height: 8px;
+    width: 100%;
+  }
+  .box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: black;
+  }
+  .box__line--top {
+    top: -8px;
+  }
+  .box__line--top::before {
+    left: 0;
+    bottom: -8px;
+  }
+  .box__line--top::after {
+    right: 0;
+    bottom: -8px;
+  }
+  .box__line--bottom {
+    bottom: -8px;
+  }
+  .box__line--bottom::before {
+    left: 0;
+    top: -8px;
+  }
+  .box__line--bottom::after {
+    right: 0;
+    top: -8px;
+  }
+  .box__line--left, .box__line--right {
+    width: 8px;
+    height: 100%;
+  }
+  .box__line--left {
+    left: -8px;
+  }
+  .box__line--right {
+    right: -8px;
+  }
+
 button.resetButton {
     margin: 10px;
     padding: 5px;
@@ -125,6 +190,12 @@ button.resetButton {
 }
 
 p.lowOrHi {
+    visibility: hidden;
+    margin: 10px;
+    padding: 5px;
+}
+
+p.guessCount {
     visibility: hidden;
     margin: 10px;
     padding: 5px;

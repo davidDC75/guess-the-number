@@ -34,9 +34,19 @@
                 <p class="lastResult result">init</p>
             </div>
             <p class="lowOrHi">init</p>
-            <div id="container-form">
-                <label for="guessField">Entrez un nombre entre 1 et 100: </label><input type="text" pattern="^(0*100|0*[1-9]|0*[1-9][\d])$" id="guessField" class="guessField">
-                <button class="guessSubmit">Valider</button>
+            <div id="formContainer">
+                <!-- pour la bordure -->
+                <div class="box__line box__line--top"></div>
+                <div class="box__line box__line--right"></div>
+                <div class="box__line box__line--bottom"></div>
+                <div class="box__line box__line--left"></div>
+                <div id="form">
+                    <label for="guessField">Entrez un nombre entre 1 et 100 </label><input type="text" pattern="^(0*100|0*[1-9]|0*[1-9][\d])$" id="guessField" class="guessField">
+                    <button class="guessSubmit">Valider</button>
+                </div>
+            </div>
+            <div id="guessCount">
+                <p class="guessCount"></p>
             </div>
             <div id="resetGameContainer">
                 <button class="resetButton">Commencer une nouvelle partie</button>
