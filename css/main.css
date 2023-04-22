@@ -219,6 +219,7 @@ button.resetButton {
 }
 
 p.lowOrHi {
+    font-size: 1.3em;
     visibility: hidden;
     margin: 10px;
     padding: 5px;
@@ -229,6 +230,10 @@ p.guessCount {
     visibility: visible;
     margin: 10px;
     padding: 5px;
+}
+
+button.guessSubmit {
+
 }
 
 footer #credit {
