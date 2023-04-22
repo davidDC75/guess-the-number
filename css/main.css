@@ -98,6 +98,11 @@ div.wizard {
     align-items: center;
     align-content: center;
     visibility: hidden;
+    border: 2px solid #000;
+    border-top-left-radius: 37px 140px;
+    border-top-right-radius: 23px 130px;
+    border-bottom-left-radius: 110px 19px;
+    border-bottom-right-radius: 120px 24px;
 
 }
 
@@ -126,6 +131,7 @@ p.result {
     font-weight: bold;
 }
 
+/* DEBUT BORDURE FORM */
 #formContainer {
     height: 50px;
     width: 600px;
@@ -182,6 +188,7 @@ p.result {
   .box__line--right {
     right: -8px;
   }
+/* FIN BORDURE FORM */
 
 button.resetButton {
     margin: 10px;
