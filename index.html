@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalizer.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="css/uicons-brands.css" rel="stylesheet">
     <title>Deviner le nombre</title>
 </head>
@@ -14,10 +15,13 @@
 
     </header>
     <main>
-        <div id="container">
+        <div id="mainContainer">
             <img src="./images/wizard.png" alt="Une sorcière d'un univers fantasy" class="wizard">
             <p class="guesses"></p>
-            <p class="lastResult"></p>
+            <div id="lastResultContainer">
+                <i class="display-icon-close material-symbols-outlined false" style="display:none;">close</i>
+                <p class="lastResult false"></p>
+            </div>
             <p class="lowOrHi"></p>
             <div id="container-form">
                 <label for="guessField">Entrez un nombre entre 1 et 100: </label><input type="text" id="guessField" class="guessField">

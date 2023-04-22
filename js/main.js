@@ -7,8 +7,25 @@ let lowOrHi = document.querySelector('.lowOrHi');
 let guessSubmit = document.querySelector('.guessSubmit');
 let guessField = document.querySelector('.guessField');
 
+let lastResultState = false;
+const resultDisplay = document.querySelector('.false');
+console.log(resultDisplay);
+
 let guessCount = 1;
 let resetButton;
+
+function css(element, style) {
+    for (const property in style)
+        element.style[property] = style[property];
+    return;
+}
+
+function SetLastResultState(state) {
+    css(resultDisplay,{
+        'display': state?'none':'block',
+    });
+    return;
+}
 
 function checkGuess() {
     let userGuess = Number(guessField.value);
@@ -24,10 +41,12 @@ function checkGuess() {
         setGameOver();
     } else if (guessCount === 10) {
         lastResult.textContent = '!!! PERDU !!!';
+        setLastResultState(false);
         setGameOver();
     } else {
         lastResult.textContent = 'Faux !';
         lastResult.style.backgroundColor = 'red';
+        SetLastResultState(false)
         if (userGuess < randomNumber) {
             lowOrHi.textContent = 'Le nombre saisi est trop petit !';
         } else if (userGuess > randomNumber) {
@@ -51,6 +70,7 @@ function setGameOver() {
 
 function resetGame() {
     guessCount = 1;
+    SetLastResultState(true);
     let resetParas = document.querySelectorAll('.resultParas p');
     for (let i = 0 ; i < resetParas.length ; i++) {
         resetParas[i].textContent = '';
